@@ -23,7 +23,10 @@ function inputHandle(event) {
 
 function submitHandle(event) {
   event.preventDefault();
-  if (input.value !== '' && textarea.value !== '') {
+  const trimmedEmail = input.value.trim();
+  const trimmedMessage = textarea.value.trim();
+  
+  if (trimmedEmail !== '' && trimmedMessage !== '') {
     console.log(JSON.parse(localStorage.getItem(LS_INPUT)));
     localStorage.removeItem(LS_INPUT);
     form.reset();
